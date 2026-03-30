@@ -3,7 +3,8 @@ function doGet(e) {
 }
 
 function doPost(e) {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Cycle-III Data");
+
 
     // Extract data from the request
     var data = e.parameter;
@@ -11,23 +12,24 @@ function doPost(e) {
 
     // Define internal names and human-readable headers
     var config = [
-        { field: 'timestamp', label: 'Timestamp' },
-        { field: 'principal_name', label: 'Principal Name' },
-        { field: 'designation', label: 'Designation' },
-        { field: 'email_id', label: 'Email ID' },
+        { field: 'timestamp', label: 'Date & Time' },
+        { field: 'principal_name', label: 'Name' },
+        { field: 'designation', label: 'Designation ' },
+        { field: 'email_id', label: 'Email-Id' },
         { field: 'branch', label: 'Branch' },
-        { field: 'session_progress_rating', label: 'Session Progress' },
-        { field: 'session_regularity', label: 'Session Regularity' },
-        { field: 'trainer_effectiveness', label: 'Trainer Effectiveness' },
-        { field: 'teacher_deployment_satisfaction', label: 'Teacher Satisfaction' },
-        { field: 'exhibition_prep_rating', label: 'Exhibition Prep' },
-        { field: 'wizklub_day_status', label: 'Wizklub Day Conducted' },
-        { field: 'exhibit_learning', label: 'Learning Exhibit' },
-        { field: 'exhibit_confidence', label: 'Student Confidence' },
-        { field: 'exhibit_engagement', label: 'Parent Engagement' },
-        { field: 'exhibition_best_part', label: 'Best Part of Exhibition' },
-        { field: 'recommend_wizklub', label: 'Would Recommend' },
-        { field: 'renewal_expectation_v2', label: 'Renewal Expectation %' }
+        { field: 'session_progress_rating', label: 'How would you rate the overall progress of Wizklub sessions during the year?' },
+        { field: 'session_regularity', label: 'Were the Wizklub sessions conducted regularly and as per schedule?' },
+        { field: 'trainer_effectiveness', label: 'How well did the Wizklub trainer exhibit subject expertise and manage the classroom environment?' },
+        { field: 'wizklub_day_status', label: 'Were the projects exhibited on during exclusive Wizklub Day or in collaboration with Science Day?' },
+        { field: 'exhibit_learning', label: 'The exhibition helped students demonstrate learning and creativity' },
+        { field: 'exhibit_confidence', label: 'Students were confident while explaining projects' },
+        { field: 'exhibition_prep_rating', label: 'How would you rate the overall Wizklub project preparation at your school?' },
+        { field: 'parents_engagement', label: 'How was the parents’ engagement and response for the project exhibition?' },
+        { field: 'exhibition_best_part', label: 'What did you like most about the exhibition?' },
+        { field: 'recommend_wizklub', label: 'Would you recommend Wizklub to other schools?' },
+        { field: 'renewal_expectation_v2', label: 'According to you, what percentage of renewal is expected for the next academic year? (Non Mavericks students renewing for AY 26-27)' },
+        { field: 'adoption_calls_permission', label: 'We have observed higher enrollment rates when class teachers speak directly with parents about the Wizklub program. Would you support involving your class teachers in these conversations during our admissions?' },
+        { field: 'areas_of_improvement', label: 'What are the areas of improvement?' }
     ];
 
     // If the sheet is empty, add the headers first
