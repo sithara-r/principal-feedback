@@ -1,5 +1,5 @@
 // Replace this with your Google Apps Script Web App URL after deployment
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7hhMpYzo_B7tjavBAY1lImLXsJA7KM38dAawjbY1CL2gNHvBS2pAHpxjMCaihiYx4/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9MZOxOY7EfHcNyLWILeDBP6C8w2mUi2N13NDTINMs2zqx7J5WYy9jM1Wq1KcOMixN/exec";
 
 const form = document.getElementById('feedbackForm');
 const submitBtn = document.getElementById('submitBtn');
